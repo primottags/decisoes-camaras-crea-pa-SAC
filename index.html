@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><title>Decisões das Câmaras · CREA-PA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"><style>body{margin:0;background:#F5F6F8;font-family:'Source Sans 3',system-ui,sans-serif;color:#2B2A2A}a{color:#1B5594}a:hover{color:#123B68}*{box-sizing:border-box}input,select,textarea{font:15px 'Source Sans 3',sans-serif;color:#2B2A2A}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:20px;height:64px;padding:0 28px;background:#fff;border-bottom:1px solid #E3E6EB;position:sticky;top:0;z-index:5">
+<img src="assets/crea-pa.png" alt="CREA-PA" style="height:30px">
+<div style="width:1px;height:28px;background:#D9DDE3"></div>
+<div style="display:flex;flex-direction:column;gap:1px;min-width:0;flex:0 1 auto"><span style="font-weight:700;font-size:16px;color:#1B5594;white-space:nowrap">Decisões das Câmaras</span><span style="font-size:12px;color:#6B6F76">Manual interno dos analistas · atualizado em {{ atualizado }}</span></div>
+<div style="flex:1 1 0"></div>
+<input value="{{ query }}" onChange="{{ onQuery }}" placeholder="🔍 Buscar nº, tema, profissão…" style="width:100%;max-width:300px;min-width:140px;flex:1 1 200px;height:38px;padding:0 12px;border:1px solid #D3D8DF;border-radius:6px;outline:none">
+<sc-if value="{{ isEditor }}" hint-placeholder-val="{{ true }}"><span onClick="{{ goNova }}" style="cursor:pointer;flex:none;white-space:nowrap;height:38px;display:flex;align-items:center;padding:0 16px;border-radius:6px;background:#C9A227;color:#2B2A2A;font-weight:700;font-size:14px">＋ Nova decisão</span></sc-if>
+</div>
+<div style="flex:1;display:flex">
+<div style="width:220px;flex:none;background:#123B68;color:#DCE5F0;padding:20px 12px;display:flex;flex-direction:column;gap:2px">
+<div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA8C6;padding:0 10px 8px">Início</div>
+<sc-for list="{{ navMain }}" as="n" hint-placeholder-count="4"><div onClick="{{ n.go }}" style="cursor:pointer;display:flex;gap:10px;padding:9px 10px;border-radius:6px;font-size:14px;background:{{ n.bg }};color:{{ n.fg }};font-weight:{{ n.fw }}"><span>{{ n.icon }}</span><span>{{ n.label }}</span><span style="margin-left:auto;color:#8FA8C6">{{ n.count }}</span></div></sc-for>
+<div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA8C6;padding:18px 10px 8px">Por origem</div>
+<sc-for list="{{ navOrigem }}" as="n" hint-placeholder-count="3"><div onClick="{{ n.go }}" style="cursor:pointer;display:flex;gap:10px;padding:9px 10px;border-radius:6px;font-size:14px;background:{{ n.bg }};color:{{ n.fg }};font-weight:{{ n.fw }}"><span>{{ n.icon }}</span><span>{{ n.label }}</span><span style="margin-left:auto;color:#8FA8C6">{{ n.count }}</span></div></sc-for>
+<div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA8C6;padding:18px 10px 8px">Por tema</div>
+<sc-for list="{{ navTema }}" as="n" hint-placeholder-count="8"><div onClick="{{ n.go }}" style="cursor:pointer;display:flex;gap:10px;padding:7px 10px;border-radius:6px;font-size:14px;background:{{ n.bg }};color:{{ n.fg }};font-weight:{{ n.fw }}"><span>{{ n.icon }}</span><span>{{ n.label }}</span><span style="margin-left:auto;color:#8FA8C6">{{ n.count }}</span></div></sc-for>
+</div>
+<div style="flex:1;min-width:0;padding:24px 24px 48px;display:flex;flex-direction:column;gap:22px">
+
+<sc-if value="{{ isResumo }}" hint-placeholder-val="{{ true }}">
+<div style="background:#fff;border:1px solid #E3E6EB;border-radius:10px;overflow:hidden">
+<div style="background:#1B5594;color:#fff;padding:22px 26px;display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div style="flex:1;display:flex;flex-direction:column;gap:4px;min-width:280px"><span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#E8C95A;font-weight:700">Resumo mensal</span><span style="font-size:28px;font-weight:700">O que mudou em {{ mesLabel }}</span><span style="font-size:14px;color:#C9D7E8">{{ resumoSub }}</span></div>
+<div style="display:flex;gap:10px">
+<sc-for list="{{ resumoStats }}" as="s" hint-placeholder-count="3"><div style="background:rgba(255,255,255,.12);border-radius:8px;padding:10px 16px;display:flex;flex-direction:column;align-items:center;min-width:80px"><span style="font-size:26px;font-weight:800">{{ s.n }}</span><span style="font-size:12px;color:#C9D7E8">{{ s.label }}</span></div></sc-for>
+</div>
+</div>
+<sc-for list="{{ resumoRows }}" as="r" hint-placeholder-count="4">
+<div onClick="{{ r.open }}" style="cursor:{{ r.cursor }};display:grid;grid-template-columns:150px minmax(0,1fr) 84px;gap:16px;align-items:start;padding:16px 26px;border-bottom:1px solid #EEF0F3;background:{{ r.rowBg }}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0"><span style="font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:4px;background:{{ r.bBg }};color:{{ r.bFg }}">{{ r.badge }}</span><span style="font-weight:700;font-size:15px;text-decoration:{{ r.deco }};color:{{ r.numColor }}">{{ r.num }}</span><span style="font-size:12px;color:#6B6F76">{{ r.orgao }}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;line-height:1.45">{{ r.titulo }}</span><span style="font-size:13px;color:#6B6F76">{{ r.nota }}</span></div>
+<span style="font-size:13px;color:#6B6F76;text-align:right">{{ r.data }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap">
+<div style="flex:2 1 300px;background:#fff;border:1px solid #E3E6EB;border-radius:10px;padding:18px 22px;display:flex;flex-direction:column;gap:10px"><span style="font-weight:700;font-size:15px">Outros meses</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><sc-for list="{{ meses }}" as="m" hint-placeholder-count="2"><span onClick="{{ m.go }}" style="cursor:pointer;padding:6px 12px;border-radius:20px;font-size:13px;border:1px solid {{ m.border }};background:{{ m.bg }};color:{{ m.fg }}">{{ m.label }} · {{ m.n }}</span></sc-for></div></div>
+<div style="flex:1 1 260px;max-width:420px;background:#FBF6E6;border:1px solid #EBDDAE;border-radius:10px;padding:18px 22px;display:flex;flex-direction:column;gap:6px"><span style="font-weight:700;font-size:15px">📌 Lembrete</span><span style="font-size:13px;line-height:1.5;color:#5A4A15">Decisões do Plenário do CONFEA valem para todos os CREAs. Decisões de câmara valem só no Pará e podem ser revistas em recurso.</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isTodas }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+<div style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:28px;font-weight:800;color:#123B68">{{ listaTitulo }}</span><span style="font-size:14px;color:#6B6F76">{{ listaSub }}</span></div>
+<span onClick="{{ toggleRev }}" style="cursor:pointer;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600"><span style="width:38px;height:22px;border-radius:11px;background:{{ revTrack }};display:flex;align-items:center;justify-content:{{ revJustify }};padding:2px"><span style="width:18px;height:18px;border-radius:50%;background:#fff"></span></span>Mostrar revogadas</span>
+<sc-if value="{{ hasFiltro }}" hint-placeholder-val="{{ false }}"><span onClick="{{ clearFiltro }}" style="cursor:pointer;padding:7px 12px;border:1px solid #D3D8DF;border-radius:6px;font-size:14px;font-weight:600;background:#fff">✕ Limpar filtro</span></sc-if>
+</div>
+<div style="background:#fff;border:1px solid #E3E6EB;border-radius:10px;overflow:hidden">
+<div style="display:grid;grid-template-columns:160px minmax(0,1fr) 170px;gap:20px;padding:10px 24px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#80858C;border-bottom:1px solid #EEF0F3"><span>Nº · Situação</span><span>Assunto</span><span>Anexos</span></div>
+<sc-for list="{{ rows }}" as="d" hint-placeholder-count="8">
+<div style="display:grid;grid-template-columns:160px minmax(0,1fr) 170px;gap:20px;align-items:start;padding:14px 24px;border-bottom:1px solid #EEF0F3;background:{{ d.rowBg }}">
+<div onClick="{{ d.open }}" style="cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0"><span style="font-weight:700;font-size:15px;text-decoration:{{ d.deco }};color:{{ d.numColor }}">{{ d.num }}</span><span style="font-size:12px;color:#6B6F76">{{ d.orgao }}</span><span style="font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:4px;background:{{ d.stBg }};color:{{ d.stFg }}">{{ d.statusLabel }}</span></div>
+<div onClick="{{ d.open }}" style="cursor:pointer;display:flex;flex-direction:column;gap:4px;min-width:0"><span style="font-size:15px;line-height:1.45;color:{{ d.txtColor }};text-wrap:pretty">{{ d.icone }} {{ d.titulo }}</span><span style="font-size:13px;color:{{ d.notaColor }};font-weight:600">{{ d.nota }}</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;min-width:0">
+<sc-for list="{{ d.files }}" as="f" hint-placeholder-count="1"><a href="{{ f.href }}" target="_blank" style="display:flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid #D3D8DF;border-radius:6px;font-size:13px;font-weight:600;color:#1B5594;text-decoration:none;background:#fff">📄 {{ f.nome }}</a></sc-for>
+<span style="font-size:13px;color:#A23B2A;font-weight:600">{{ d.missing }}</span>
+</div>
+</div>
+</sc-for>
+<sc-if value="{{ semResultado }}" hint-placeholder-val="{{ false }}"><div style="padding:40px;text-align:center;color:#6B6F76;font-size:15px">Nada encontrado para “{{ query }}”.</div></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCadeias }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:28px;font-weight:800;color:#123B68">Cadeias de decisões</span><span style="font-size:14px;color:#6B6F76">Como cada entendimento mudou ao longo do tempo. O último card de cada cadeia é o que vale hoje.</span></div>
+<sc-for list="{{ cadeias }}" as="c" hint-placeholder-count="2">
+<div style="background:#fff;border:1px solid #E3E6EB;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:20px;font-weight:800;color:#123B68">{{ c.icone }} {{ c.titulo }}</span><span style="font-size:15px;line-height:1.5;color:#4A4D52;max-width:860px">{{ c.resumo }}</span></div>
+<div style="display:flex;align-items:stretch;gap:0;flex-wrap:wrap">
+<sc-for list="{{ c.itens }}" as="i" hint-placeholder-count="2">
+<div onClick="{{ i.open }}" style="cursor:pointer;width:280px;border:1px solid #E3E6EB;border-top:4px solid {{ i.top }};border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:6px;background:{{ i.bg }}">
+<span style="font-size:13px;color:#6B6F76">{{ i.orgao }}</span><span style="font-weight:800;font-size:18px;text-decoration:{{ i.deco }};color:{{ i.numColor }}">{{ i.num }}</span>
+<span style="font-size:14px;line-height:1.45">{{ i.titulo }}</span>
+<span style="font-size:11px;font-weight:700;letter-spacing:.04em;color:{{ i.stFg }};background:{{ i.stBg }};align-self:flex-start;padding:3px 8px;border-radius:4px">{{ i.statusLabel }}</span>
+</div>
+<sc-if value="{{ i.hasRel }}" hint-placeholder-val="{{ false }}"><div style="width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0 8px"><span style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:{{ i.relColor }};text-align:center">{{ i.rel }}</span><div style="width:100%;height:2px;background:{{ i.relColor }}"></div><span style="color:{{ i.relColor }};font-size:16px">→</span></div></sc-if>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</sc-if>
+
+<sc-if value="{{ isHistorico }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:28px;font-weight:800;color:#123B68">Histórico de atualizações</span><span style="font-size:14px;color:#6B6F76">Tudo o que entrou, saiu ou mudou no manual. Revogações ficam registradas aqui mesmo depois de riscadas.</span></div>
+<div style="background:#fff;border:1px solid #E3E6EB;border-radius:10px;padding:24px 28px;display:flex;flex-direction:column">
+<sc-for list="{{ historico }}" as="h" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:120px 24px minmax(0,1fr);gap:16px">
+<span style="font-weight:700;font-size:15px;padding-top:2px">{{ h.data }}</span>
+<div style="display:flex;flex-direction:column;align-items:center"><span style="width:12px;height:12px;border-radius:50%;background:{{ h.dot }};margin-top:6px"></span><span style="flex:1;width:2px;background:#E3E6EB"></span></div>
+<div onClick="{{ h.open }}" style="cursor:{{ h.cursor }};display:flex;gap:10px;align-items:baseline;padding-bottom:22px;font-size:15px;flex-wrap:wrap"><span style="font-size:11px;font-weight:700;width:96px;flex:none;padding:3px 0;text-align:center;border-radius:4px;background:{{ h.bBg }};color:{{ h.bFg }}">{{ h.badge }}</span><b>{{ h.num }}</b><span style="color:#4A4D52">{{ h.nota }}</span></div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNova }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:28px;font-weight:800;color:#123B68">Nova decisão</span><span style="font-size:14px;color:#6B6F76">Suba o PDF: o que der para ler vem preenchido. Confira os campos, adicione e baixe o arquivo de dados atualizado.</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+<div style="flex:1 1 260px;max-width:360px;display:flex;flex-direction:column;gap:14px">
+<label style="position:relative;cursor:pointer;border:2px dashed #B9C4D3;border-radius:10px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;text-align:center"><span style="font-size:28px">📄</span><span style="font-weight:700;font-size:15px;color:#1B5594">Escolher PDF da decisão</span><span style="font-size:13px;color:#80858C">O texto é lido aqui no navegador</span><input type="file" accept="application/pdf" onChange="{{ onPdf }}" style="position:absolute;width:1px;height:1px;opacity:0"></label>
+<sc-if value="{{ hasPdfMsg }}" hint-placeholder-val="{{ false }}"><div style="background:{{ pdfMsgBg }};border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.45">{{ pdfMsg }}</div></sc-if>
+<sc-if value="{{ ghOk }}" hint-placeholder-val="{{ false }}"><div style="background:#E4F2EA;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.5"><span style="font-weight:700;color:#1F6B44">✓ Publicação direta ativa</span><span>Repositório <code>{{ gh.repo }}</code> · ramo <code>{{ gh.branch }}</code></span><span>“Publicar no site” envia o PDF e atualiza o manual para todos em cerca de 1 minuto.</span><span onClick="{{ ghEdit }}" style="cursor:pointer;color:#1B5594;font-weight:600">Alterar configuração</span></div></sc-if>
+<sc-if value="{{ ghSetup }}" hint-placeholder-val="{{ false }}"><div style="background:#fff;border:1px solid #E3E6EB;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.5">
+<span style="font-weight:700">Ligar publicação direta (uma vez só)</span>
+<span style="color:#4A4D52">No GitHub: Settings → Developer settings → Fine-grained tokens → Generate. Repository access: só este repositório. Permissions → Contents: Read and write. Cole o token aqui.</span>
+<input value="{{ g.repo }}" onChange="{{ gset.repo }}" placeholder="primottags/decisoes-camaras-crea-pa" style="height:38px;border:1px solid #D3D8DF;border-radius:6px;padding:0 10px">
+<input value="{{ g.branch }}" onChange="{{ gset.branch }}" placeholder="main" style="height:38px;border:1px solid #D3D8DF;border-radius:6px;padding:0 10px">
+<input type="password" value="{{ g.token }}" onChange="{{ gset.token }}" placeholder="github_pat_…" style="height:38px;border:1px solid #D3D8DF;border-radius:6px;padding:0 10px">
+<span onClick="{{ ghSave }}" style="cursor:pointer;text-align:center;padding:9px;border-radius:6px;background:#123B68;color:#fff;font-weight:700">Salvar neste navegador</span>
+<span style="font-size:12px;color:#6B6F76">O token fica só no seu navegador. Os analistas não veem esta aba.</span>
+</div></sc-if>
+</div>
+<div style="flex:999 1 480px;min-width:0;background:#fff;border:1px solid #E3E6EB;border-radius:10px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Nº e ano</span><input value="{{ f.num }}" onChange="{{ set.num }}" placeholder="CEEC 1234/2026" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 12px"></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Origem</span><select value="{{ f.origem }}" onChange="{{ set.origem }}" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 8px;background:#fff"><option value="CREA">CREA-PA</option><option value="CONFEA">CONFEA</option><option value="REF">Referência</option></select></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Tipo</span><select value="{{ f.tipo }}" onChange="{{ set.tipo }}" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 8px;background:#fff"><option>Decisão de Câmara</option><option>Decisão Plenária</option><option>Decisão Normativa</option><option>Resolução</option><option>Documento</option></select></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Câmara / órgão</span><input value="{{ f.orgao }}" onChange="{{ set.orgao }}" placeholder="Câmara de Eng. Civil" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 12px"></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Data</span><input type="date" value="{{ f.data }}" onChange="{{ set.data }}" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 12px"></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Tema</span><select value="{{ f.tema }}" onChange="{{ set.tema }}" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 8px;background:#fff"><sc-for list="{{ temaOpts }}" as="t" hint-placeholder-count="1"><option value="{{ t.id }}">{{ t.label }}</option></sc-for></select></label>
+<label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Ementa</span><textarea value="{{ f.titulo }}" onChange="{{ set.titulo }}" rows="3" style="border:1px solid #D3D8DF;border-radius:6px;padding:10px 12px;line-height:1.5;resize:vertical"></textarea></label>
+<label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Pontos principais <span style="font-weight:400;color:#80858C">(um por linha)</span></span><textarea value="{{ f.pontos }}" onChange="{{ set.pontos }}" rows="3" style="border:1px solid #D3D8DF;border-radius:6px;padding:10px 12px;line-height:1.5;resize:vertical"></textarea></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Votação</span><input value="{{ f.votacao }}" onChange="{{ set.votacao }}" placeholder="Unânime · 5 conselheiros" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 12px"></label>
+<label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:600">Revoga alguma decisão do manual?</span><select value="{{ f.revoga }}" onChange="{{ set.revoga }}" style="height:40px;border:1px solid #D3D8DF;border-radius:6px;padding:0 8px;background:#fff"><option value="">Não revoga</option><sc-for list="{{ revogaOpts }}" as="o" hint-placeholder-count="1"><option value="{{ o.id }}">{{ o.label }}</option></sc-for></select></label>
+<div style="grid-column:1 / -1;display:flex;align-items:center;gap:12px;padding-top:6px;border-top:1px solid #EEF0F3;flex-wrap:wrap">
+<span style="flex:1;font-size:14px;color:#6B6F76;min-width:240px">{{ novaAviso }}</span>
+<span onClick="{{ publicar }}" style="cursor:pointer;padding:10px 18px;border-radius:6px;background:{{ pubBg }};color:#fff;font-weight:700;font-size:14px">{{ pubLabel }}</span>
+<span onClick="{{ baixarJson }}" style="cursor:pointer;padding:10px 16px;border:1px solid #D3D8DF;border-radius:6px;font-weight:700;font-size:14px;background:#fff">⬇ Baixar decisoes.json</span>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+<sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ fechar }}" style="position:fixed;inset:0;background:rgba(18,59,104,.35);z-index:20"></div>
+<div style="position:fixed;top:0;right:0;bottom:0;width:600px;max-width:100%;background:#fff;z-index:21;overflow:auto;box-shadow:-8px 0 30px rgba(0,0,0,.15);display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:8px;padding:16px 28px;border-bottom:1px solid #E3E6EB;position:sticky;top:0;background:#fff">
+<span style="font-weight:700;font-size:12px;padding:4px 9px;border-radius:4px;background:{{ sel.stBg }};color:{{ sel.stFg }}">● {{ sel.statusLabel }}</span><span style="font-size:12px;padding:4px 9px;border-radius:4px;background:#EAF0F8;color:#1B5594;font-weight:600">{{ sel.abrangencia }}</span>
+<div style="flex:1"></div><span onClick="{{ fechar }}" style="cursor:pointer;font-size:22px;color:#6B6F76;padding:0 4px">✕</span>
+</div>
+<div style="padding:24px 28px 40px;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;color:#6B6F76">{{ sel.icone }} {{ sel.temaNome }} · {{ sel.tipo }}</span><span style="font-size:30px;font-weight:800;color:#123B68;line-height:1.1;text-decoration:{{ sel.deco }}">{{ sel.num }}</span><span style="font-family:'Source Serif 4',serif;font-size:19px;line-height:1.45;text-wrap:pretty">{{ sel.titulo }}</span><span style="font-size:13px;color:#8A6D12;font-weight:600">{{ sel.nota }}</span></div>
+<sc-if value="{{ sel.revogada }}" hint-placeholder-val="{{ false }}"><div onClick="{{ sel.openPor }}" style="cursor:pointer;padding:14px 16px;border:1px dashed #D9A497;background:#FCF6F4;border-radius:8px;font-size:15px"><b style="color:#A23B2A">Revogada.</b> Use a <b style="color:#1B5594">{{ sel.porNum }} →</b></div></sc-if>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#E3E6EB;border:1px solid #E3E6EB;border-radius:8px;overflow:hidden">
+<div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#6B6F76">Órgão</span><span style="font-weight:600;font-size:14px">{{ sel.orgao }}</span></div>
+<div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#6B6F76">Data</span><span style="font-weight:600;font-size:14px">{{ sel.dataF }}</span></div>
+<div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#6B6F76">Votação</span><span style="font-weight:600;font-size:14px">{{ sel.votacaoF }}</span></div>
+</div>
+<sc-if value="{{ sel.hasPontos }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F76">Pontos principais</span>
+<sc-for list="{{ sel.pontos }}" as="p" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:15px;line-height:1.5"><span style="color:#C9A227;font-weight:700">▸</span><span>{{ p.t }}</span></div></sc-for></div></sc-if>
+<sc-if value="{{ sel.hasRel }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F76">Relacionadas</span>
+<sc-for list="{{ sel.rel }}" as="r" hint-placeholder-count="1"><div onClick="{{ r.open }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid #E3E6EB;border-radius:8px;font-size:14px"><span style="font-weight:700;font-size:11px;letter-spacing:.06em;color:{{ r.color }};width:90px;flex:none">{{ r.label }}</span><span style="font-weight:700;text-decoration:{{ r.deco }}">{{ r.num }}</span><span style="color:#6B6F76;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.titulo }}</span></div></sc-for></div></sc-if>
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F76">Anexos</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><sc-for list="{{ sel.files }}" as="f" hint-placeholder-count="1"><a href="{{ f.href }}" target="_blank" style="padding:9px 14px;border-radius:6px;background:#1B5594;color:#fff;font-weight:600;font-size:14px;text-decoration:none">📄 Abrir {{ f.nome }}</a></sc-for><span style="font-size:14px;color:#A23B2A;font-weight:600">{{ sel.missing }}</span></div></div>
+<div style="background:#F5F6F8;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F76">Para o parecer</span>
+<span style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.55;background:#fff;border-radius:6px;padding:12px">{{ sel.considerando }}</span>
+<span onClick="{{ copiar }}" style="cursor:pointer;text-align:center;padding:9px;border-radius:6px;background:#C9A227;font-weight:700;font-size:14px">{{ copyLabel }}</span>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const fmt = iso => iso ? iso.split('-').reverse().join('/') : '';
+const BADGE = { nova: ['NOVA','#E4F2EA','#1F6B44','#1F6B44'], revogada: ['REVOGADA','#F6E1DC','#A23B2A','#A23B2A'], atualizada: ['ATUALIZADA','#EAF0F8','#1B5594','#1B5594'], importacao: ['IMPORTAÇÃO','#EEF0F3','#4A4D52','#C9CED6'] };
+const EMPTY = { num: '', origem: 'CREA', tipo: 'Decisão de Câmara', orgao: '', data: '', tema: 'outros', titulo: '', pontos: '', votacao: '', revoga: '' };
+const slug = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+class Component extends DCLogic {
+  state = { db: null, view: 'resumo', filtro: null, query: '', showRev: true, sel: null, mes: null, copied: false, f: { ...EMPTY }, pdfMsg: '', pdfOk: true, pdfFile: null, aviso: '', busy: false, ghEditing: false, g: (() => { try { return JSON.parse(localStorage.getItem('gh-publish') || 'null') || { repo: '', branch: 'main', token: '' }; } catch (e) { return { repo: '', branch: 'main', token: '' }; } })() };
+
+  componentDidMount() {
+    fetch('decisoes.json?v=' + Date.now()).then(r => r.json()).then(db => {
+      try { const extra = JSON.parse(localStorage.getItem('decisoes-extra') || 'null'); if (extra && extra.atualizado > db.atualizado && extra.decisoes.length >= db.decisoes.length) db = extra; } catch (e) {}
+      this.setState({ db });
+    });
+  }
+
+  async lerPdf(file) {
+    this.setState({ pdfMsg: 'Lendo ' + file.name + '…', pdfOk: true, pdfFile: file });
+    try {
+      const { PDFParse } = await import('https://cdn.jsdelivr.net/npm/pdf-parse@2.4.5/dist/pdf-parse/web/pdf-parse.es.js');
+      PDFParse.setWorker('https://cdn.jsdelivr.net/npm/pdf-parse@2.4.5/dist/pdf-parse/web/pdf.worker.min.mjs');
+      const parser = new PDFParse({ data: new Uint8Array(await file.arrayBuffer()) });
+      const t = (await parser.getText({ first: 2 })).text.replace(/\s+/g, ' ');
+      if (t.replace(/-- \d+ of \d+ --/g, '').trim().length < 80) { this.setState({ pdfMsg: 'PDF escaneado (sem texto). Preencha os campos à mão.', pdfOk: false }); return; }
+      const f = { ...this.state.f };
+      const crea = /Regional de Engenharia e Agronomia do Par[áa]|CREA-PA/i.test(t);
+      f.origem = crea ? 'CREA' : 'CONFEA';
+      let m = t.match(/Decis[ãa]o\s*(?:N[ºo°]\s*)?:\s*([A-Z]{2,7}[\s\/-]*\d{1,5}\/\d{4}|PL-\d{3,4}\/\d{2,4}|\d{1,5}\/\d{4}-[A-Z]{2,6})/i);
+      const dn = t.match(/DECIS[ÃA]O NORMATIVA N[ºo°]\s*(\d+)/i);
+      if (m) { f.num = m[1].replace(/\s*\/\s*/, ' ').replace(/^([A-Z]+)\s+(\d)/, '$1 $2').replace(/^([A-Z]+) (\d+) (\d{4})$/, '$1 $2/$3'); f.num = m[1].replace(/([A-Z])\/(\d)/, '$1 $2'); f.tipo = /^PL/i.test(m[1]) ? 'Decisão Plenária' : 'Decisão de Câmara'; }
+      else if (dn) { const y = t.match(/DE \d{1,2} [A-Z]{3,} (\d{4})/); f.num = 'DN ' + dn[1].padStart(3, '0') + (y ? '/' + y[1] : ''); f.tipo = 'Decisão Normativa'; }
+      const e = t.match(/EMENTA:?\s*(.+?)(?=\s(?:O Plen[áa]rio|D E C I S|DECIS[ÃA]O|CONSIDERANDO|Considerando|A C[âa]mara|Interessado|RELAT[ÓO]RIO)|$)/i);
+      if (e) f.titulo = e[1].slice(0, 500).trim();
+      const cam = t.match(/C[ÂA]MARA ESPECIALIZADA DE ([A-ZÀ-Ú ,]+?)(?= Reuni| -|$)/i);
+      if (cam) f.orgao = 'Câmara de ' + cam[1].trim().toLowerCase().replace(/(^|\s)\S/g, s => s.toUpperCase()).replace(/ E /g, ' e ').replace(/ Do /g, ' do ');
+      else if (!crea) f.orgao = 'Plenário do CONFEA';
+      const d = t.match(/(\d{2})\/(\d{2})\/(\d{4})/); if (d) f.data = d[3] + '-' + d[2] + '-' + d[1];
+      const v = t.match(/por (unanimidade|maioria)/i); if (v) f.votacao = v[1].toLowerCase() === 'unanimidade' ? 'Unânime' : 'Por maioria';
+      const db = this.state.db; if (db) { const rv = db.decisoes.find(x => x.status === 'vigente' && t.includes('revoga') && new RegExp('revoga[^.]{0,80}' + x.num.replace(/[^0-9\/]/g, '').replace('/', '\\D{0,3}'), 'i').test(t)); if (rv) f.revoga = rv.id; }
+      this.setState({ f, pdfMsg: '✓ Campos preenchidos a partir do PDF. Confira antes de adicionar.', pdfOk: true });
+    } catch (err) { this.setState({ pdfMsg: 'Não consegui ler o PDF: ' + err.message, pdfOk: false }); }
+  }
+
+  adicionar() {
+    const { f, db, pdfFile } = this.state;
+    if (!f.num.trim() || !f.titulo.trim()) { this.setState({ aviso: 'Preencha pelo menos o nº e a ementa.' }); return; }
+    const id = slug(f.num);
+    const pasta = f.origem === 'CONFEA' ? 'pdfs/confea/' : f.origem === 'REF' ? 'pdfs/outros/' : 'pdfs/crea-pa/';
+    const nova = { id, num: f.num.trim(), tipo: f.tipo, origem: f.origem, orgao: f.orgao.trim(), tema: f.tema, status: 'vigente', titulo: f.titulo.trim(), arquivos: pdfFile ? [{ nome: 'Decisão', arquivo: pasta + id + '.pdf' }] : [] };
+    if (f.data) nova.data = f.data;
+    if (f.votacao) nova.votacao = f.votacao;
+    const pts = f.pontos.split('\n').map(s => s.trim()).filter(Boolean); if (pts.length) nova.pontos = pts;
+    const hoje = new Date().toISOString().slice(0, 10);
+    const decisoes = db.decisoes.filter(x => x.id !== id).map(x => x.id === f.revoga ? { ...x, status: 'revogada', revogadaPor: id } : x);
+    if (f.revoga) nova.revoga = [f.revoga];
+    decisoes.unshift(nova);
+    const historico = [{ data: hoje, tipo: 'nova', id, nota: 'Incluída no manual.' }, ...(f.revoga ? [{ data: hoje, tipo: 'revogada', id: f.revoga, nota: 'Revogada pela ' + nova.num + '.' }] : []), ...db.historico];
+    const ndb = { ...db, atualizado: hoje, decisoes, historico };
+    try { localStorage.setItem('decisoes-extra', JSON.stringify(ndb)); } catch (e) {}
+    if (pdfFile) this.blobs = { ...(this.blobs || {}), [nova.arquivos[0].arquivo]: URL.createObjectURL(pdfFile) };
+    this.setState({ db: ndb, f: { ...EMPTY }, pdfFile: null, pdfMsg: '', aviso: '✓ ' + nova.num + ' adicionada neste navegador.', sel: id });
+    return { ndb, pdfFile, pdfPath: pdfFile ? nova.arquivos[0].arquivo : null, num: nova.num };
+  }
+
+  ghReady() { const g = this.state.g; return !!(g && g.repo && g.token && /^[^/\s]+\/[^/\s]+$/.test(g.repo.trim())); }
+
+  async ghPut(path, b64, msg) {
+    const g = this.state.g, repo = g.repo.trim(), branch = (g.branch || 'main').trim();
+    const url = 'https://api.github.com/repos/' + repo + '/contents/' + path.split('/').map(encodeURIComponent).join('/');
+    const hd = { Authorization: 'Bearer ' + g.token.trim(), Accept: 'application/vnd.github+json' };
+    let sha; const cur = await fetch(url + '?ref=' + encodeURIComponent(branch), { headers: hd }); if (cur.ok) sha = (await cur.json()).sha;
+    const r = await fetch(url, { method: 'PUT', headers: hd, body: JSON.stringify({ message: msg, content: b64, branch, ...(sha ? { sha } : {}) }) });
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).message || ('HTTP ' + r.status));
+  }
+
+  async publicar() {
+    if (this.state.busy) return;
+    const res = this.adicionar(); if (!res) return;
+    if (!this.ghReady()) { this.setState({ aviso: '✓ ' + res.num + ' adicionada neste navegador. Ligue a publicação direta ao lado ou baixe o decisoes.json.' }); return; }
+    this.setState({ busy: true, aviso: 'Publicando ' + res.num + '…' });
+    try {
+      if (res.pdfFile) { const b64 = await new Promise((ok, err) => { const fr = new FileReader(); fr.onload = () => ok(String(fr.result).split(',')[1]); fr.onerror = err; fr.readAsDataURL(res.pdfFile); }); await this.ghPut(res.pdfPath, b64, 'PDF ' + res.num); }
+      const json = JSON.stringify(res.ndb, null, 2); await this.ghPut('decisoes.json', btoa(unescape(encodeURIComponent(json))), 'Inclui ' + res.num);
+      try { localStorage.removeItem('decisoes-extra'); } catch (e) {}
+      this.setState({ busy: false, aviso: '✓ ' + res.num + ' publicada. Em cerca de 1 minuto aparece para todos.' });
+    } catch (e) { this.setState({ busy: false, aviso: '⚠ Não publicou: ' + e.message + '. A decisão ficou salva aqui; tente de novo ou baixe o decisoes.json.' }); }
+  }
+
+  baixarJson() {
+    const blob = new Blob([JSON.stringify(this.state.db, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'decisoes.json'; a.click();
+    if (this.state.pdfFile || this.lastPdf) {}
+  }
+
+  renderVals() {
+    const S = this.state, db = S.db;
+    const go = (view, extra = {}) => () => this.setState({ view, sel: null, ...extra });
+    const base = { atualizado: db ? fmt(db.atualizado) : '…', query: S.query,
+      onQuery: e => this.setState({ query: e.target.value, view: e.target.value ? 'todas' : S.view }),
+      goNova: go('nova'), fechar: () => this.setState({ sel: null }) };
+    if (!db) return { ...base, navMain: [], navOrigem: [], navTema: [], isResumo: false };
+    const temas = db.temas, byId = Object.fromEntries(db.decisoes.map(d => [d.id, d]));
+    const open = id => () => byId[id] && this.setState({ sel: id, copied: false });
+    const href = p => (this.blobs && this.blobs[p]) || p;
+    const dec = d => {
+      const r = d.status === 'revogada', ref = d.origem === 'REF', t = temas[d.tema] || temas.outros;
+      return { ...d, icone: t.icone, temaNome: t.nome, revogada: r,
+        statusLabel: r ? 'REVOGADA' : ref ? 'REFERÊNCIA' : 'VIGENTE', stBg: r ? '#F6E1DC' : ref ? '#EEF0F3' : '#E4F2EA', stFg: r ? '#A23B2A' : ref ? '#4A4D52' : '#1F6B44',
+        rowBg: r ? '#FCF6F4' : '#fff', deco: r ? 'line-through' : 'none', numColor: r ? '#8A8D92' : '#2B2A2A', txtColor: r ? '#6B6F76' : '#2B2A2A',
+        nota: r && d.revogadaPor && byId[d.revogadaPor] ? 'Revogada pela ' + byId[d.revogadaPor].num + ' →' : (d.nota || ''), notaColor: r ? '#1B5594' : '#8A6D12',
+        files: (d.arquivos || []).map(a => ({ nome: a.nome, href: href(a.arquivo) })), missing: (d.arquivos || []).length ? '' : (r ? 'sem PDF' : '⚠ PDF não localizado'),
+        open: open(r && d.revogadaPor ? d.revogadaPor : d.id) };
+    };
+    const all = db.decisoes.map(dec);
+    const ano = d => +(d.data ? d.data.slice(0, 4) : (d.num.match(/(\d{4})(?!.*\d{4})/) || [0, 0])[1]);
+    const isF = (k, v) => S.view === 'todas' && S.filtro && S.filtro[0] === k && S.filtro[1] === v;
+    const nav = (icon, label, count, active, onClick) => ({ icon, label, count, go: onClick, bg: active ? '#1B5594' : 'transparent', fg: active ? '#fff' : '#DCE5F0', fw: active ? 600 : 400 });
+    const nDec = all.filter(d => d.origem !== 'REF').length;
+    const navMain = [nav('📅', 'Resumo do mês', '', S.view === 'resumo', go('resumo')), nav('🗂', 'Todas', nDec, S.view === 'todas' && !S.filtro, go('todas', { filtro: null })), nav('🔗', 'Cadeias', db.cadeias.length, S.view === 'cadeias', go('cadeias')), nav('🕓', 'Histórico', '', S.view === 'historico', go('historico'))];
+    const navOrigem = [['CONFEA', '🏛', 'CONFEA'], ['CREA', '⚖️', 'CREA-PA'], ['REF', '📘', 'Referências']].map(([v, i, l]) => nav(i, l, all.filter(d => d.origem === v).length, isF('origem', v), go('todas', { filtro: ['origem', v, l] })));
+    const navTema = Object.entries(temas).filter(([k]) => k !== 'referencia').map(([k, t]) => [k, t, all.filter(d => d.tema === k).length]).filter(x => x[2]).map(([k, t, n]) => nav(t.icone, t.nome, n, isF('tema', k), go('todas', { filtro: ['tema', k, t.nome] })));
+
+    // Todas
+    const q = S.query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    let rows = all.filter(d => (!S.filtro || d[S.filtro[0]] === S.filtro[1]) && (S.showRev || !d.revogada) && (!q || norm([d.num, d.titulo, d.orgao, d.temaNome, (d.pontos || []).join(' ')].join(' ')).includes(q)));
+    rows.sort((a, b) => (a.origem === 'REF') - (b.origem === 'REF') || ano(b) - ano(a));
+
+    // Resumo
+    const hist = db.historico.map(h => ({ ...h, mes: h.data.slice(0, 7) }));
+    const mesesKeys = [...new Set(hist.map(h => h.mes))].sort().reverse();
+    const mes = S.mes || mesesKeys[0] || new Date().toISOString().slice(0, 7);
+    const mesLbl = k => { const [y, m] = k.split('-'); return MESES[+m - 1] + ' de ' + y; };
+    const histRow = h => { const d = h.id && byId[h.id], b = BADGE[h.tipo] || BADGE.atualizada, dd = d && dec(d);
+      return { badge: b[0], bBg: b[1], bFg: b[2], dot: b[3], num: d ? d.num : 'Manual', orgao: d ? (temas[d.tema] || temas.outros).icone + ' ' + d.orgao : '', titulo: d ? d.titulo : h.nota, nota: d ? h.nota : '', data: fmt(h.data),
+        rowBg: h.tipo === 'revogada' ? '#FCF6F4' : '#fff', deco: h.tipo === 'revogada' ? 'line-through' : 'none', numColor: h.tipo === 'revogada' ? '#8A8D92' : '#2B2A2A', open: d ? open(d.id) : () => {}, cursor: d ? 'pointer' : 'default' }; };
+    const doMes = hist.filter(h => h.mes === mes);
+    const cnt = t => doMes.filter(h => h.tipo === t).length;
+
+    // Cadeias
+    const cadeias = db.cadeias.map(c => ({ ...c, itens: c.itens.filter(i => byId[i.id]).map((i, k, arr) => { const d = dec(byId[i.id]), last = k === arr.length - 1, rv = (i.rel || '').startsWith('revog');
+      return { ...d, orgao: (d.origem === 'CONFEA' ? '🏛 CONFEA · nacional' : '⚖️ CREA-PA · regional') + (ano(d) ? ' · ' + ano(d) : ''), open: open(d.id), top: d.revogada ? '#C9A49A' : last ? '#1B5594' : '#6B6F76', bg: last && !d.revogada ? '#F3F6FA' : '#fff',
+        statusLabel: d.revogada ? 'REVOGADA' : last ? 'VIGENTE · entendimento atual' : d.missing ? 'VIGENTE · ⚠ sem PDF' : 'VIGENTE', hasRel: !last && !!i.rel, rel: i.rel || '', relColor: rv ? '#A23B2A' : '#8A6D12' }; }) }));
+
+    // Detalhe
+    let sel = null;
+    if (S.sel && byId[S.sel]) {
+      const d = dec(byId[S.sel]);
+      const rel = [...(d.revoga || []).filter(id => byId[id]).map(id => ({ label: 'REVOGA', color: '#A23B2A', ...byId[id], deco: 'line-through', open: open(id) })),
+        ...db.cadeias.filter(c => c.itens.some(i => i.id === d.id)).flatMap(c => c.itens.filter(i => i.id !== d.id && byId[i.id] && !(d.revoga || []).includes(i.id) && i.id !== d.revogadaPor).map(i => ({ label: 'MESMA CADEIA', color: '#1B5594', ...byId[i.id], deco: byId[i.id].status === 'revogada' ? 'line-through' : 'none', open: open(i.id) })))];
+      const ementa = d.titulo.replace(/\.$/, '');
+      const artigo = /^(Resolução|Decisão)/.test(d.tipo) ? 'a' : 'o';
+      sel = { ...d, abrangencia: d.origem === 'CONFEA' ? 'Nacional · CONFEA' : d.origem === 'CREA' ? 'Regional · CREA-PA' : 'Documento de referência', dataF: fmt(d.data) || (ano(d) ? String(ano(d)) : '—'), votacaoF: d.votacao || '—',
+        hasPontos: !!(d.pontos && d.pontos.length), pontos: (d.pontos || []).map(t => ({ t })), rel, hasRel: rel.length > 0,
+        porNum: d.revogadaPor && byId[d.revogadaPor] ? byId[d.revogadaPor].num : '', openPor: open(d.revogadaPor),
+        considerando: 'CONSIDERANDO ' + artigo + ' ' + d.tipo + ' ' + d.num + (d.origem === 'CREA' ? ' do CREA-PA' : d.origem === 'CONFEA' ? ' do CONFEA' : '') + (d.data ? ', de ' + fmt(d.data) : '') + ': “' + ementa + '”;' };
+    }
+
+    const f = S.f, setF = k => e => this.setState({ f: { ...this.state.f, [k]: e.target.value } });
+    const pasta = f.origem === 'CONFEA' ? 'pdfs/confea/' : f.origem === 'REF' ? 'pdfs/outros/' : 'pdfs/crea-pa/';
+    return { ...base, navMain, navOrigem, navTema,
+      isResumo: S.view === 'resumo', isTodas: S.view === 'todas', isCadeias: S.view === 'cadeias', isHistorico: S.view === 'historico', isNova: S.view === 'nova',
+      mesLabel: mesLbl(mes), resumoSub: doMes.length ? doMes.length + ' registro(s) neste mês' : 'Nenhuma mudança neste mês',
+      resumoStats: [{ n: cnt('nova'), label: 'novas' }, { n: cnt('revogada'), label: 'revogadas' }, { n: cnt('atualizada'), label: 'atualizadas' }],
+      resumoRows: doMes.map(histRow),
+      meses: mesesKeys.map(k => ({ label: mesLbl(k), n: hist.filter(h => h.mes === k).length, go: () => this.setState({ mes: k }), bg: k === mes ? '#1B5594' : '#fff', fg: k === mes ? '#fff' : '#2B2A2A', border: k === mes ? '#1B5594' : '#D3D8DF' })),
+      listaTitulo: S.filtro ? S.filtro[2] : 'Todas as decisões', listaSub: rows.length + ' itens · ' + rows.filter(d => d.files.length).length + ' com PDF' + (q ? ' · busca: “' + S.query + '”' : ''),
+      rows, semResultado: rows.length === 0, hasFiltro: !!S.filtro, clearFiltro: () => this.setState({ filtro: null }),
+      toggleRev: () => this.setState({ showRev: !S.showRev }), revTrack: S.showRev ? '#1B5594' : '#C9CED6', revJustify: S.showRev ? 'flex-end' : 'flex-start',
+      cadeias, historico: hist.map(histRow),
+      hasSel: !!sel, sel: sel || {}, copyLabel: S.copied ? '✓ Copiado' : 'Copiar CONSIDERANDO',
+      copiar: () => { navigator.clipboard && navigator.clipboard.writeText(sel.considerando); this.setState({ copied: true }); setTimeout(() => this.setState({ copied: false }), 1600); },
+      f, set: Object.fromEntries(Object.keys(EMPTY).map(k => [k, setF(k)])),
+      temaOpts: Object.entries(temas).map(([id, t]) => ({ id, label: t.icone + ' ' + t.nome })),
+      revogaOpts: db.decisoes.filter(d => d.status === 'vigente' && d.origem !== 'REF').map(d => ({ id: d.id, label: d.num + ' — ' + d.titulo.slice(0, 70) })),
+      onPdf: e => { const file = e.target.files && e.target.files[0]; if (file) this.lerPdf(file); },
+      hasPdfMsg: !!S.pdfMsg, pdfMsg: S.pdfMsg, pdfMsgBg: S.pdfOk ? '#E4F2EA' : '#FBF6E6',
+      pastaDestino: pasta, nomeArquivo: (f.num ? slug(f.num) : 'ceec-1234-2026') + '.pdf',
+      novaAviso: S.aviso || 'Os dados ficam salvos neste navegador até você subir o decisoes.json.',
+      adicionar: () => this.adicionar(), baixarJson: () => this.baixarJson(), publicar: () => this.publicar(),
+      pubLabel: S.busy ? 'Publicando…' : this.ghReady() ? '⬆ Publicar no site' : 'Adicionar ao manual', pubBg: S.busy ? '#80858C' : '#1B5594',
+      isEditor: this.ghReady() || /editor/.test(location.href) || !/github\.io/.test(location.host),
+      ghOk: this.ghReady() && !S.ghEditing, ghSetup: !this.ghReady() || S.ghEditing, gh: { repo: S.g.repo, branch: S.g.branch || 'main' }, g: S.g,
+      gset: Object.fromEntries(['repo', 'branch', 'token'].map(k => [k, e => this.setState({ g: { ...this.state.g, [k]: e.target.value } })])),
+      ghSave: () => { try { localStorage.setItem('gh-publish', JSON.stringify(this.state.g)); } catch (e) {} this.setState({ ghEditing: false, aviso: this.ghReady() ? '✓ Publicação direta ligada.' : 'Preencha repositório (dono/nome) e token.' }); },
+      ghEdit: () => this.setState({ ghEditing: true }) };
+  }
+}
+</script>
+</body>
+</html>

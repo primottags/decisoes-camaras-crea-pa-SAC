@@ -1,0 +1,1374 @@
+{
+  "atualizado": "2026-10-23",
+  "temas": {
+    "eletrica": {
+      "icone": "⚡",
+      "nome": "Elétrica"
+    },
+    "incendio": {
+      "icone": "🔥",
+      "nome": "Incêndio / PPCI"
+    },
+    "saneamento": {
+      "icone": "🏥",
+      "nome": "PGRSS e Saneamento"
+    },
+    "civil": {
+      "icone": "🏗",
+      "nome": "Eng. Civil"
+    },
+    "ambiental": {
+      "icone": "🌿",
+      "nome": "Ambiental"
+    },
+    "florestal": {
+      "icone": "🌲",
+      "nome": "Florestal"
+    },
+    "agronomia": {
+      "icone": "🌾",
+      "nome": "Agronomia"
+    },
+    "mineracao": {
+      "icone": "⛏",
+      "nome": "Mineração"
+    },
+    "geo": {
+      "icone": "📐",
+      "nome": "Georreferenciamento"
+    },
+    "pj": {
+      "icone": "🏢",
+      "nome": "Registro de PJ"
+    },
+    "seguranca": {
+      "icone": "🦺",
+      "nome": "Segurança do Trabalho"
+    },
+    "outros": {
+      "icone": "📋",
+      "nome": "Outros"
+    },
+    "referencia": {
+      "icone": "📘",
+      "nome": "Referências"
+    },
+    "fiscalizacao": {
+      "icone": "🔎",
+      "nome": "Fiscalização / Autos"
+    },
+    "atribuicoes": {
+      "icone": "🎓",
+      "nome": "Atribuições"
+    }
+  },
+  "decisoes": [
+    {
+      "id": "pl-0286-2026",
+      "num": "PL-0286/2026",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "data": "2026-03-26",
+      "votacao": "Unânime",
+      "titulo": "Revoga a DN 120/2023 e aprova nova relação unificada de obras e serviços de rotina (ART múltipla); atualiza a TOS nacional.",
+      "pontos": [
+        "Nova relação de atividades de rotina que podem ir em ART múltipla (Res. 1.137/2023, art. 35).",
+        "TOS nacional ganha os códigos 11.10.15 (instalação de carregadores de veículos elétricos) e 39.36.3 (embarcações de pesca).",
+        "Inclui na rotina: poda de árvores, receituário agronômico, PGR, LTCAT, recarga de extintores, manutenção de ar-condicionado e elevadores, entre outros."
+      ],
+      "revoga": [
+        "dn-120-2023"
+      ],
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (transcrição)",
+          "arquivo": "pdfs/confea/PL-0286-2026.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://normativos.confea.org.br/Ementas/Visualizar?id=83317"
+        }
+      ]
+    },
+    {
+      "id": "res-1160-2025",
+      "num": "Res. 1160/2025",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "data": "2025-12-11",
+      "titulo": "Atualiza a Res. 1.137/2023 (ART, acervo técnico-profissional e acervo operacional); efeitos a partir de 17/03/2026.",
+      "pontos": [
+        "Muda regras de ART em subcontratação: o profissional da contratante registra ART de gestão, direção, supervisão ou coordenação.",
+        "Ajustes operacionais em ART e registro de acervo."
+      ],
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1160-2025.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=487982"
+        }
+      ]
+    },
+    {
+      "id": "res-1162-2025",
+      "num": "Res. 1162/2025",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "atribuicoes",
+      "status": "vigente",
+      "data": "2025-12-11",
+      "titulo": "Institui a Tabela de Títulos Profissionais do Sistema Confea/Crea.",
+      "pontos": [
+        "Cada título tem código nacional, forma masculina, feminina e abreviada.",
+        "Novo título pode nascer no Crea, no cadastramento de curso ou no registro profissional; a decisão deve mandar os autos ao Confea."
+      ],
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1162-2025.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=487984"
+        }
+      ]
+    },
+    {
+      "id": "res-1167-2026",
+      "num": "Res. 1167/2026",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2026-04-28",
+      "titulo": "Altera o art. 32 da Res. 1.121/2019: cancelamento de registro de PJ encerrada ou inativa.",
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1167-2026.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=495361"
+        }
+      ],
+      "pontos": [
+        "Comprovação por certidão de baixa: Junta Comercial, Registro de PJ, Receita Federal ou Receita Estadual (isolada ou cumulativamente).",
+        "Antes de cancelar, notificar a PJ no endereço cadastrado com prazo de 30 dias para manifestação.",
+        "Depois do prazo, com ou sem manifestação, o processo vai à câmara especializada para decisão.",
+        "Débitos existentes continuam cobráveis."
+      ]
+    },
+    {
+      "id": "res-1166-2026",
+      "num": "Res. 1166/2026",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "data": "2026-03-26",
+      "titulo": "Institui o Sistema de Identificação e Certificação Profissional: carteira física, digital, provisória, temporária e certificado digital ICP-Brasil.",
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1166-2026.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=493582"
+        }
+      ],
+      "pontos": [
+        "Carteira de Identidade Profissional: definitiva, após anotação do diploma.",
+        "Carteira Provisória: diploma ainda em processamento no órgão de ensino.",
+        "Carteira Temporária: diplomado no exterior com contrato de trabalho no País.",
+        "Carteiras valem como identificação civil e profissional em todo o território nacional; modelos antigos continuam válidos."
+      ]
+    },
+    {
+      "id": "res-1165-2026",
+      "num": "Res. 1165/2026",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2026-03-26",
+      "titulo": "Altera a Res. 1.121/2019 (registro de pessoas jurídicas), a partir do art. 9º.",
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1165-2026.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=493581"
+        }
+      ]
+    },
+    {
+      "id": "res-1158-2025",
+      "num": "Res. 1158/2025",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2025-11-27",
+      "titulo": "Altera a Res. 1.066/2015: titular único de empresa individual ou LTDA unipessoal que paga a anuidade da PJ fica isento da anuidade de pessoa física (desde 1º/01/2026).",
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/Res-1158-2025.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.legisweb.com.br/legislacao/?id=487191"
+        }
+      ],
+      "pontos": [
+        "Vale só para titular único; com mais de um sócio não há isenção.",
+        "MEI não entra (não há registro obrigatório de MEI no Crea).",
+        "Inadimplência da PJ a partir de 31/03 faz perder a isenção.",
+        "Se a PJ for registrada depois do pagamento da anuidade PF, a isenção vale só no exercício seguinte."
+      ]
+    },
+    {
+      "id": "dn-124-2026",
+      "num": "DN 124/2026",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "titulo": "Política de Privacidade e Proteção de Dados Pessoais (LGPD) do Sistema Confea/Crea e Mútua.",
+      "nota": "Levantamento out/2026",
+      "arquivos": [
+        {
+          "nome": "PDF (ficha)",
+          "arquivo": "pdfs/confea/DN-124-2026.pdf"
+        },
+        {
+          "nome": "Fonte oficial",
+          "arquivo": "https://www.confea.org.br/funcionamento/lgpd/legislacao-publicacoes"
+        }
+      ]
+    },
+    {
+      "id": "pl-1802-2026",
+      "num": "PL-1802/2026",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "fiscalizacao",
+      "status": "vigente",
+      "data": "2026-09-24",
+      "votacao": "Unânime",
+      "titulo": "Anula auto de infração do CREA-PA por capitulação errada (art. 59 da Lei 5.194/66) e manda refiscalizar.",
+      "pontos": [
+        "Recurso conhecido e parcialmente provido.",
+        "Nulidade do Auto de Infração 23314733/2024: o dispositivo legal citado não corresponde aos fatos descritos.",
+        "O Crea deve fazer nova fiscalização in loco com a capitulação correta."
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1802-2026.pdf"
+        }
+      ]
+    },
+    {
+      "id": "res-1156-2025",
+      "num": "Res. 1156/2025",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "eletrica",
+      "status": "vigente",
+      "data": "2025-10-24",
+      "titulo": "Consolida as atividades e competências dos engenheiros da modalidade Eletricista (aprovada pela PL-2270/2025; vigente desde 31/10/2025).",
+      "pontos": [
+        "Revoga os arts. 8º e 9º da Res. 218/1973 e as Res. 380/1993, 427/1999, 1.076/2016, 1.100/2018 e 1.103/2018.",
+        "Orientação da CEEE à SRA: correspondência de títulos, cursos abrangidos e marco temporal para novos registros."
+      ],
+      "arquivos": [
+        {
+          "nome": "Orientação CEEE",
+          "arquivo": "pdfs/crea-pa/Res-1156-2025-orientacao-CEEE.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0069-2025",
+      "num": "PL-0069/2025",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "atribuicoes",
+      "status": "vigente",
+      "votacao": "Unânime",
+      "titulo": "Atribuições profissionais, iniciais ou estendidas, não devem ser concedidas como itens da Tabela de Obras e Serviços (TOS).",
+      "pontos": [
+        "Não conceder atribuição por item da TOS.",
+        "Os Regionais podem fazer a correspondência entre atribuições e itens da TOS.",
+        "Recebida no CREA-PA em 12/12/2025."
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0069-2025.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceee-1375-2026",
+      "num": "CEEE 1375/2026",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Elétrica",
+      "tema": "eletrica",
+      "status": "vigente",
+      "data": "2026-09-10",
+      "votacao": "Unânime · 5 conselheiros",
+      "titulo": "Aprova a Proposição Técnica 01/2026 (diretrizes para SAVE, recarga de veículos elétricos) como contribuição à IT 12 Parte VI do CBMPA.",
+      "pontos": [
+        "Diretrizes de responsabilidade técnica para Sistemas de Alimentação de Veículos Eletrificados (SAVE).",
+        "Encaminhada ao Corpo de Bombeiros Militar do Pará para a IT 12, Parte VI."
+      ],
+      "arquivos": [
+        {
+          "nome": "Processo e decisão",
+          "arquivo": "pdfs/crea-pa/CEEE-1375-2026-SAVE.pdf"
+        },
+        {
+          "nome": "IT 12 CBMPA",
+          "arquivo": "pdfs/outros/IT-12-ParteVI-CBMPA-SAVE.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceagro-816-2026",
+      "num": "CEAGRO 816/2026",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Agronomia",
+      "tema": "agronomia",
+      "status": "vigente",
+      "data": "2026-08-17",
+      "votacao": "Unânime",
+      "titulo": "Laudo de perda de vocação agrícola (Decreto 7.341/2010): habilitados o Eng. Agrônomo e o Eng. Florestal.",
+      "pontos": [
+        "Eng. Agrônomo com atribuições do Decreto 23.196/1933 e/ou art. 5º da Res. 218/1973.",
+        "Eng. Florestal com atribuições do art. 10 da Res. 218/1973.",
+        "Fundamentos: PL-1306/2020 e PL-2197/2018."
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEAGRO-816-2026.pdf"
+        },
+        {
+          "nome": "Processo",
+          "arquivo": "pdfs/crea-pa/CEAGRO-816-2026-processo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-4610-2026",
+      "num": "CEEC 4610/2026",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil e Agrimensura",
+      "tema": "outros",
+      "status": "vigente",
+      "data": "2026-09-23",
+      "titulo": "Arquiva a penalidade aplicada em auto de infração.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/Decisao-4610-2026.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0458-2026",
+      "num": "PL-0458/2026",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "geo",
+      "status": "vigente",
+      "titulo": "Processos da DN 116/2021 devem receber instrução prévia da CEAP antes da decisão.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0458.pdf"
+        },
+        {
+          "nome": "Encaminhamento",
+          "arquivo": "pdfs/confea/PL-0458-2026-encaminhamento.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceee-2299-2024",
+      "num": "CEEE 2299/2024",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Elétrica e Seg. do Trabalho",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2024-12-02",
+      "titulo": "Normativo de PJ: altera itens da Decisão CEEE 1376/2024.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEE-normativo-PJ.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-6594-2024",
+      "num": "CEEC 6594/2024",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil e Agrimensura",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2024-10-16",
+      "titulo": "Normativo de inclusão de responsabilidade técnica de PJ na câmara.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEC-normativo-PJ.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cemm-2877-2024",
+      "num": "CEMM 2877/2024",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Mecânica, Química e Minas",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2024-10-16",
+      "titulo": "Revisão do normativo de PJ da câmara.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEMM-normativo-PJ.pdf"
+        },
+        {
+          "nome": "Íntegra",
+          "arquivo": "pdfs/crea-pa/CEEMM-PJ-relato.pdf"
+        },
+        {
+          "nome": "Relato e voto",
+          "arquivo": "pdfs/crea-pa/CEEMM-normativo-PJ-relato.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceef-101-2024",
+      "num": "CEEF 101/2024",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Florestal",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2024-04-19",
+      "titulo": "Normativo de PJ da Engenharia Florestal.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEF-normativo-PJ.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceagro-257-2024",
+      "num": "CEAGRO 257/2024",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Agronomia",
+      "tema": "pj",
+      "status": "vigente",
+      "data": "2024-03-22",
+      "titulo": "Normativo de PJ da Agronomia.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEA-normativo-PJ.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceee-2692-2023",
+      "num": "CEEE 2692/2023",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Elétrica",
+      "tema": "eletrica",
+      "status": "vigente",
+      "data": "2023-09-22",
+      "votacao": "Unânime · 4 conselheiros",
+      "titulo": "Eng. Civil pode projetar e executar instalações elétricas prediais de baixa tensão até 75 kW.",
+      "pontos": [
+        "Eng. Civil pode projetar e executar instalações elétricas prediais de baixa tensão até 75 kW (Res. 218/73, art. 7º; Decreto 23.569/33, art. 30).",
+        "Não é atribuição do Eng. Civil: SPDA, rede lógica, corrente contínua e subestações de qualquer potência.",
+        "Estendida a casos semelhantes futuros."
+      ],
+      "revoga": [
+        "ceee-78-2012"
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEE-2692-2023.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceee-78-2012",
+      "num": "CEEE 78/2012",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Elétrica",
+      "tema": "eletrica",
+      "status": "revogada",
+      "revogadaPor": "ceee-2692-2023",
+      "titulo": "Limites Eng. Civil × Eng. Elétrica em instalações (entendimento anterior).",
+      "arquivos": []
+    },
+    {
+      "id": "dn-120-2023",
+      "num": "DN 120/2023",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "revogada",
+      "revogadaPor": "pl-0286-2026",
+      "titulo": "Relação unificada de atividades e de obras e serviços de rotina (ART múltipla).",
+      "arquivos": []
+    },
+    {
+      "id": "pl-1276-2021",
+      "num": "PL-1276/2021",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "ambiental",
+      "status": "vigente",
+      "titulo": "Capina e limpeza de vias: declara nulas a ART, a CAT e a autuação do interessado.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1276-2021-capina.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cemm-145-2018",
+      "num": "CEMM 145/2018",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Mecânica e Minas",
+      "tema": "mineracao",
+      "status": "vigente",
+      "titulo": "Curso de lavra a céu aberto.",
+      "nota": "PDF escaneado: conferir ementa",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEMM-145-2018.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0391-2017",
+      "num": "PL-0391/2017",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "ambiental",
+      "status": "vigente",
+      "titulo": "Jardinagem.",
+      "nota": "PDF escaneado: conferir ementa",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0391-2017.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-128-2017",
+      "num": "CEEC 128/2017",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil",
+      "tema": "saneamento",
+      "status": "vigente",
+      "data": "2017-03-30",
+      "titulo": "Libera ART do Eng. Sanitarista para PGRSS; a atividade não pode sair da fiscalização do Sistema CONFEA/CREA.",
+      "pontos": [
+        "A elaboração do PGRSS compete ao Engenheiro Sanitarista.",
+        "A atividade não pode ser excluída da fiscalização do Sistema CONFEA/CREA.",
+        "Ler em conjunto com a PL-1701/2008 e a 145/2010-CEEC."
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEC-128-2017.pdf"
+        },
+        {
+          "nome": "Relato",
+          "arquivo": "pdfs/crea-pa/CEEC-128-2017-relato.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cemm-151-2017",
+      "num": "CEMM 151/2017",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Mecânica",
+      "tema": "outros",
+      "status": "vigente",
+      "titulo": "Decisão CEMM 151/2017.",
+      "nota": "PDF escaneado: conferir assunto",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEMM-151-2017.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-615-2016",
+      "num": "CEEC 615/2016",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil",
+      "tema": "saneamento",
+      "status": "vigente",
+      "titulo": "Eng. Sanitarista: limpeza e desinfecção de poços.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEC-615-2016.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-1024-2016",
+      "num": "PL-1024/2016",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "incendio",
+      "status": "vigente",
+      "titulo": "Creas devem oficiar os corpos de bombeiros sobre os profissionais habilitados (proposta da CCEEC).",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-1794-2015",
+      "num": "PL-1794/2015",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "eletrica",
+      "status": "vigente",
+      "titulo": "Confirma a necessidade de RT na manutenção de equipamentos médico-hospitalares.",
+      "pontos": [
+        "Não existe “RT substituto”.",
+        "RT pode ser engenheiro eletricista ou tecnólogo/técnico de área correlata.",
+        "A empresa tem 10 dias para indicar novo RT."
+      ],
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1794-2015.pdf"
+        },
+        {
+          "nome": "Íntegra",
+          "arquivo": "pdfs/confea/PL-1794.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-1883-2015",
+      "num": "PL-1883/2015",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "florestal",
+      "status": "vigente",
+      "titulo": "Aprova proposta da CCEEF de encaminhar ofício à Presidência da República.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1883.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-103-2015",
+      "num": "CEEC 103/2015",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil",
+      "tema": "incendio",
+      "status": "vigente",
+      "titulo": "Projetos de prevenção e combate a incêndio.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEC-103-2015.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0259-2014",
+      "num": "PL-0259/2014",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "titulo": "Engenheiro de Pesca tem ampla competência (consulta do Crea-RN).",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0259.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-096-2013",
+      "num": "CEEC 096/2013",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil",
+      "tema": "ambiental",
+      "status": "vigente",
+      "titulo": "PRAD elaborado por Engenheiro Ambiental.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/crea-pa/CEEC-096-2013.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ceec-145-2010",
+      "num": "145/2010-CEEC",
+      "tipo": "Decisão de Câmara",
+      "origem": "CREA",
+      "orgao": "Câmara de Eng. Civil",
+      "tema": "saneamento",
+      "status": "vigente",
+      "titulo": "Primeiro posicionamento: PGRSS é competência de quem tem formação em Engenharia Sanitária.",
+      "arquivos": []
+    },
+    {
+      "id": "pl-1701-2008",
+      "num": "PL-1701/2008",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "saneamento",
+      "status": "vigente",
+      "data": "2008-10-31",
+      "titulo": "Atribuição para elaborar PGRSS: indeferida para Engenheira Ambiental (Res. 447/2000).",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-1701-2008-PGRSS.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0302-2008",
+      "num": "PL-0302/2008",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "civil",
+      "status": "vigente",
+      "titulo": "Responsabilidade técnica e limites do Técnico em Edificações.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0302.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0033-2008",
+      "num": "PL-0033/2008",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "ambiental",
+      "status": "vigente",
+      "titulo": "Atribuição do Geógrafo para monitoramento ambiental de resíduos sólidos.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0033.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0719-2007",
+      "num": "PL-0719/2007",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "civil",
+      "status": "vigente",
+      "titulo": "Competência do Engenheiro Civil para batimetria (Res. 218/73).",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0719.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0919-2007",
+      "num": "PL-0919/2007",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "titulo": "Não registro de profissionais de informática.",
+      "nota": "Arquivo está em .doc: salvar como PDF",
+      "arquivos": []
+    },
+    {
+      "id": "dn-079-2006",
+      "num": "DN 079/2006",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "florestal",
+      "status": "vigente",
+      "data": "2006-04-28",
+      "titulo": "Revoga a DN 077/2005 (silvicultura: Eng. Florestal × Eng. Agrônomo).",
+      "revoga": [
+        "dn-077-2005"
+      ],
+      "arquivos": [
+        {
+          "nome": "DN",
+          "arquivo": "pdfs/confea/DN-079-2006.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-077-2005",
+      "num": "DN 077/2005",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "florestal",
+      "status": "revogada",
+      "revogadaPor": "dn-079-2006",
+      "titulo": "Atribuições do Eng. Florestal e do Eng. Agrônomo em silvicultura.",
+      "arquivos": []
+    },
+    {
+      "id": "pl-0294-2003",
+      "num": "PL-0294/2003",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "ambiental",
+      "status": "vigente",
+      "titulo": "Poda.",
+      "nota": "PDF escaneado: conferir ementa",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0294-2003.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0990-2002",
+      "num": "PL-0990/2002",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "eletrica",
+      "status": "vigente",
+      "titulo": "Baixa tensão.",
+      "nota": "PDF escaneado: conferir ementa",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0990-2002.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0979-2002",
+      "num": "PL-0979/2002",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "civil",
+      "status": "vigente",
+      "titulo": "Pedido da CEEC do Crea-RS de reconsideração da PL-0270/2000.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0979.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0964-2002",
+      "num": "PL-0964/2002",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "eletrica",
+      "status": "vigente",
+      "titulo": "Profissionais habilitados a elaborar e executar instalações telefônicas e de lógica.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0964.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pl-0489-1998",
+      "num": "PL-0489/1998",
+      "tipo": "Decisão Plenária",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "incendio",
+      "status": "vigente",
+      "titulo": "Profissionais competentes para elaborar projetos de prevenção contra incêndio.",
+      "arquivos": [
+        {
+          "nome": "Decisão",
+          "arquivo": "pdfs/confea/PL-0489.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-061-1998",
+      "num": "DN 061/1998",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "agronomia",
+      "status": "vigente",
+      "data": "1998-03-27",
+      "titulo": "Revoga a DN 031/88 sobre barragens de terra por Eng. Agrônomo e Eng. Agrícola.",
+      "revoga": [
+        "dn-031-1988"
+      ],
+      "arquivos": [
+        {
+          "nome": "DN",
+          "arquivo": "pdfs/confea/DN-061.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-031-1988",
+      "num": "DN 031/1988",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "agronomia",
+      "status": "revogada",
+      "revogadaPor": "dn-061-1998",
+      "titulo": "Competência de Eng. Agrônomo e Eng. Agrícola em projeto e execução de barragens de terra.",
+      "arquivos": []
+    },
+    {
+      "id": "dn-053-1994",
+      "num": "DN 053/1994",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "agronomia",
+      "status": "vigente",
+      "data": "1994-11-09",
+      "titulo": "Responsabilidade técnica na operação de armazéns de beneficiamento e guarda de produtos agrícolas.",
+      "arquivos": [
+        {
+          "nome": "DN",
+          "arquivo": "pdfs/confea/DN-053.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-052-1994",
+      "num": "DN 052/1994",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "outros",
+      "status": "vigente",
+      "data": "1994-08-25",
+      "titulo": "Obrigatoriedade de RT pelas instalações de parques de diversões.",
+      "arquivos": [
+        {
+          "nome": "DN",
+          "arquivo": "pdfs/confea/DN-052.pdf"
+        }
+      ]
+    },
+    {
+      "id": "res-359-1991",
+      "num": "Res. 359/1991",
+      "tipo": "Resolução",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "seguranca",
+      "status": "vigente",
+      "data": "1991-07-31",
+      "titulo": "Exercício profissional, registro e atividades do Engenheiro de Segurança do Trabalho.",
+      "arquivos": [
+        {
+          "nome": "Resolução",
+          "arquivo": "pdfs/confea/Res-0359-1991.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dn-020-1986",
+      "num": "DN 020/1986",
+      "tipo": "Decisão Normativa",
+      "origem": "CONFEA",
+      "orgao": "Plenário do CONFEA",
+      "tema": "civil",
+      "status": "vigente",
+      "data": "1986-04-25",
+      "titulo": "Serviços de concretagem e sua ART.",
+      "arquivos": [
+        {
+          "nome": "DN",
+          "arquivo": "pdfs/confea/DN-020.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ref-receituario",
+      "num": "Manual de Receituário",
+      "tipo": "Documento",
+      "origem": "REF",
+      "orgao": "CONFEA",
+      "tema": "referencia",
+      "status": "vigente",
+      "titulo": "Como preencher a ART e o receituário agronômico.",
+      "arquivos": [
+        {
+          "nome": "Manual",
+          "arquivo": "pdfs/outros/Manual-Receituario-Agronomico.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ref-ral",
+      "num": "RAL",
+      "tipo": "Documento",
+      "origem": "REF",
+      "orgao": "Mineração",
+      "tema": "referencia",
+      "status": "vigente",
+      "titulo": "Relatório Anual de Lavra.",
+      "arquivos": [
+        {
+          "nome": "PDF",
+          "arquivo": "pdfs/outros/RAL-Relatorio-Anual-de-Lavra.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ref-regimento",
+      "num": "Regimento Interno",
+      "tipo": "Documento",
+      "origem": "REF",
+      "orgao": "CREA-PA",
+      "tema": "referencia",
+      "status": "vigente",
+      "titulo": "Regimento Interno do CREA-PA.",
+      "arquivos": [
+        {
+          "nome": "PDF",
+          "arquivo": "pdfs/outros/Regimento-Interno.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ref-pauta-agri-2026",
+      "num": "Pauta CCEEAGRI 2026",
+      "tipo": "Documento",
+      "origem": "REF",
+      "orgao": "CCEEAGRI",
+      "tema": "referencia",
+      "status": "vigente",
+      "titulo": "Pauta da 2ª Reunião Ordinária de 2026 da CCEEAGRI.",
+      "arquivos": [
+        {
+          "nome": "PDF",
+          "arquivo": "pdfs/outros/Pauta-CCEEAGRI-2RO-2026.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ref-parecer-cat-427025",
+      "num": "Parecer SAC · CAT 427025/2026",
+      "tipo": "Documento",
+      "origem": "REF",
+      "orgao": "Seção de Apoio ao Colegiado",
+      "tema": "referencia",
+      "status": "vigente",
+      "titulo": "Atribuição do Eng. Agrícola como declarante de CAT para relatório e programa de controle ambiental (Res. 256/1978 × Res. 447/2000).",
+      "arquivos": [
+        {
+          "nome": "Parecer",
+          "arquivo": "pdfs/outros/Parecer-SAC-CAT-427025-2026.pdf"
+        }
+      ]
+    }
+  ],
+  "cadeias": [
+    {
+      "id": "pgrss",
+      "icone": "🏥",
+      "titulo": "PGRSS — quem pode elaborar o plano",
+      "resumo": "A elaboração do PGRSS compete ao Engenheiro Sanitarista e não pode sair da fiscalização do Sistema CONFEA/CREA. Leia as três decisões em conjunto.",
+      "itens": [
+        {
+          "id": "pl-1701-2008",
+          "rel": "distingue"
+        },
+        {
+          "id": "ceec-145-2010",
+          "rel": "reafirma"
+        },
+        {
+          "id": "ceec-128-2017"
+        }
+      ]
+    },
+    {
+      "id": "eletrica-civil",
+      "icone": "⚡",
+      "titulo": "Eng. Civil em instalações elétricas",
+      "resumo": "Vale a 2692/2023: baixa tensão predial até 75 kW, sem SPDA, rede lógica, corrente contínua ou subestação.",
+      "itens": [
+        {
+          "id": "ceee-78-2012",
+          "rel": "revogada por"
+        },
+        {
+          "id": "ceee-2692-2023"
+        }
+      ]
+    },
+    {
+      "id": "silvicultura",
+      "icone": "🌲",
+      "titulo": "Silvicultura — Eng. Florestal × Eng. Agrônomo",
+      "resumo": "A DN 077/2005 foi revogada pela DN 079/2006.",
+      "itens": [
+        {
+          "id": "dn-077-2005",
+          "rel": "revogada por"
+        },
+        {
+          "id": "dn-079-2006"
+        }
+      ]
+    },
+    {
+      "id": "barragens",
+      "icone": "🌾",
+      "titulo": "Barragens de terra — Eng. Agrônomo e Agrícola",
+      "resumo": "A DN 031/1988 foi revogada pela DN 061/1998.",
+      "itens": [
+        {
+          "id": "dn-031-1988",
+          "rel": "revogada por"
+        },
+        {
+          "id": "dn-061-1998"
+        }
+      ]
+    },
+    {
+      "id": "art-rotina",
+      "icone": "📝",
+      "titulo": "ART múltipla — obras e serviços de rotina",
+      "resumo": "A relação de serviços de rotina saiu da DN 120/2023 e agora é aprovada por decisão plenária (PL-0286/2026), que pode ser atualizada mais rápido.",
+      "itens": [
+        {
+          "id": "dn-120-2023",
+          "rel": "revogada por"
+        },
+        {
+          "id": "pl-0286-2026"
+        }
+      ]
+    }
+  ],
+  "historico": [
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1165-2026",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "pl-0286-2026",
+      "nota": "Encontrada no levantamento de 2026."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "revogada",
+      "id": "dn-120-2023",
+      "nota": "Revogada pela PL-0286/2026."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1160-2025",
+      "nota": "Encontrada no levantamento (efeitos desde 17/03/2026)."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1162-2025",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1167-2026",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1166-2026",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1158-2025",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "dn-124-2026",
+      "nota": "Encontrada no levantamento."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "pl-1802-2026",
+      "nota": "Decisão de 24/09/2026 incluída."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "ceee-1375-2026",
+      "nota": "Decisão de 10/09/2026 (SAVE) incluída."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "ceagro-816-2026",
+      "nota": "Decisão de 17/08/2026 incluída."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "res-1156-2025",
+      "nota": "Resolução incluída com a orientação da CEEE."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "pl-0069-2025",
+      "nota": "Decisão incluída."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "atualizada",
+      "id": "pl-0458-2026",
+      "nota": "E-mail de encaminhamento anexado."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "importacao",
+      "nota": "Manual criado a partir da aba 11 do manual geral e das pastas de PDFs (44 itens)."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "nova",
+      "id": "ceec-4610-2026",
+      "nota": "Decisão de 23/09/2026 incluída."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "revogada",
+      "id": "ceee-78-2012",
+      "nota": "Registrada como revogada pela CEEE 2692/2023."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "revogada",
+      "id": "dn-077-2005",
+      "nota": "Registrada como revogada pela DN 079/2006."
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "revogada",
+      "id": "dn-031-1988",
+      "nota": "Registrada como revogada pela DN 061/1998."
+    }
+  ]
+}

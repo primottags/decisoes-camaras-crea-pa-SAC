@@ -1,0 +1,30 @@
+MANUAL DE DECISÕES DAS CÂMARAS — CREA-PA
+
+Conteúdo desta pasta (suba TUDO no GitHub, mantendo as pastas):
+  index.html      → o site
+  support.js      → necessário para o site funcionar
+  decisoes.json   → todas as decisões (é o que muda a cada atualização)
+  assets/         → logos
+  pdfs/           → PDFs (confea/, crea-pa/, outros/)
+
+PUBLICAR (primeira vez)
+1. github.com → New repository → nome: decisoes-camaras-crea-pa → Public → Create.
+2. Na página do repositório: "uploading an existing file".
+3. Arraste o CONTEÚDO desta pasta (não a pasta "site" em si) → Commit changes.
+   Se o navegador não aceitar pastas, use o GitHub Desktop (desktop.github.com).
+4. Settings → Pages → Source: Deploy from a branch → Branch: main / (root) → Save.
+5. Em 1–2 minutos: https://SEU-USUARIO.github.io/decisoes-camaras-crea-pa/
+
+ATUALIZAR (pelo próprio site)
+1. Abra o site com ?editor no final:
+   https://SEU-USUARIO.github.io/decisoes-camaras-crea-pa/?editor
+2. Aba "Nova decisão" → ligue a publicação direta (uma vez):
+   GitHub → Settings (do seu perfil) → Developer settings → Personal access tokens
+   → Fine-grained tokens → Generate new token
+   → Repository access: Only select repositories → decisoes-camaras-crea-pa
+   → Permissions → Contents: Read and write → Generate → copie o token.
+   Cole no site junto com "seu-usuario/decisoes-camaras-crea-pa" e "main".
+3. Daí em diante: suba o PDF, confira os campos, clique "Publicar no site".
+
+O token fica só no seu navegador. Os analistas acessam o endereço normal,
+sem ?editor, e não veem a aba de cadastro.
